@@ -148,6 +148,11 @@ body {
     padding-right: 20px;
 }
 
+.main-content .content h2,
+.main-content .content h3 {
+    color: #fff;
+}
+
 .content .top-bar {
     position: fixed;
     top: 0;
@@ -171,32 +176,62 @@ body {
 }
 .content .music-content {
     flex-basis: 100%;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    overflow-y: auto;
+    color: #7d7f84;
 }
 
-.music-content .content-nav .inline-list {
+.music-content .inline-list {
     list-style: none;
     text-align: center;
     padding-top: 30px;
+    margin-bottom: 30px;
 }
 
-.music-content .content-nav .inline-list>li {
+.music-content .inline-list>li {
     display: inline;
     margin-right: 25px;
     color: #7d7f84;
     cursor: pointer;
 }
-
-.music-content .content-nav .inline-list>li:first-child::after {
+/*
+.music-content .inline-list>li:first-child::after {
     content: '';
     position: absolute;
     width: 40px;
     border-bottom: 4px solid #adff2f;
     top: 155px;
-    left: 725px;
+    left: 740px;
+}
+*/
+.music-content .inline-list>li:last-child {
+    margin-right: 0;
 }
 
-.music-content .content-nav .inline-list>li:last-child {
-    margin-right: 0;
+.music {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    width: 260px;
+    padding: 5px;
+}
+
+.box {
+    height: 200px;
+    text-align: center;
+}
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.music .box h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
