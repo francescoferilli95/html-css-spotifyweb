@@ -33,17 +33,28 @@ body {
 
 .sidebar .logo {
     width: 60%;
+    cursor: pointer;
 }
 
 .sidebar .block-list {
     list-style: none;
     margin-top: 30px;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .sidebar .block-list .active {
-    border-left: 5px solid #adff2f;
-    color:  #fff;
+    color:   #fff;
+}
+
+.sidebar .block-list .active::before {
+    position: absolute;
+    left: 0px;
+    content: '';
+    height: 33px;
+    border: 1px solid #adff2f;
+    border-left: 4px solid #adff2f;
+    color: #fff;
 }
 
 .sidebar .block-list li:not(:first-child) {
@@ -55,6 +66,7 @@ body {
     width: 13%;
     vertical-align: middle;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .sidebar h3 {
@@ -68,6 +80,7 @@ body {
     height: 50px;
     background: #a3a3a3;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .sidebar .playlist {
@@ -129,6 +142,7 @@ body {
 /* CONTENT */
 
 .main-content .content {
+    display: flex;
     flex-basis: calc(100% - 250px);
     padding-top: 99px;
     padding-right: 20px;
@@ -153,7 +167,38 @@ body {
     color: #fff;
     border: 1px solid #fff;
     font-weight: 800;
+    cursor: pointer;
 }
+.content .music-content {
+    flex-basis: 100%;
+}
+
+.music-content .content-nav .inline-list {
+    list-style: none;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.music-content .content-nav .inline-list>li {
+    display: inline;
+    margin-right: 25px;
+    color: #7d7f84;
+    cursor: pointer;
+}
+
+.music-content .content-nav .inline-list>li:first-child::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    border-bottom: 4px solid #adff2f;
+    top: 155px;
+    left: 725px;
+}
+
+.music-content .content-nav .inline-list>li:last-child {
+    margin-right: 0;
+}
+
 
 
 
