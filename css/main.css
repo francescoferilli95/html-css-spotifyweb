@@ -69,6 +69,10 @@ body {
     cursor: pointer;
 }
 
+.sidebar li:hover {
+    color: #fff;
+}
+
 .sidebar h3 {
     color: #fff;
 }
@@ -174,6 +178,7 @@ body {
     font-weight: 800;
     cursor: pointer;
 }
+
 .content .music-content {
     flex-basis: 100%;
     flex-grow: 1;
@@ -195,6 +200,10 @@ body {
     margin-right: 25px;
     color: #7d7f84;
     cursor: pointer;
+}
+
+.music-content .inline-list>li:hover {
+    color: #fff;
 }
 
 /*.music-content .inline-list>li:first-child::after {
