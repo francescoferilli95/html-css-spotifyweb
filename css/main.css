@@ -236,12 +236,11 @@ body {
 }
 
 .col {
-    width: 260px;
-    padding: 5px;
+    width: calc((100% / 6) - 20px);
 }
 
 .box {
-    height: 200px;
+    width: 200px;
     text-align: center;
 }
 .box img {
@@ -256,17 +255,9 @@ body {
     margin-bottom: 20px;
 }
 
-.music-content .your-music {
-    margin-top: 135px;
-}
-
 .music-content .your-music p {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.music-content .popular-artists {
-    margin-top: 135px;
 }
 
 .music-content .popular-artists p {
