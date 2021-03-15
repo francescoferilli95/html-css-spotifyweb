@@ -23,10 +23,11 @@ body {
 .main-content .sidebar {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     overflow-y: hidden;
     flex-basis: 250px;
     height: calc(100vh - 90px);
-    padding: 15px;
+    padding: 0 15px;
     color: #676767;
     background: #000;
 }
@@ -44,7 +45,7 @@ body {
 }
 
 .sidebar .block-list .active {
-    color:   #fff;
+    color:  #fff;
 }
 
 .sidebar .block-list .active::before {
@@ -67,10 +68,6 @@ body {
     vertical-align: middle;
     margin-right: 15px;
     cursor: pointer;
-}
-
-.sidebar li:hover {
-    color: #fff;
 }
 
 .sidebar h3 {
@@ -130,10 +127,19 @@ body {
 }
 
 .sidebar .account {
-    position: absolute;
-    bottom: 66px;
+    background: #000;
 }
 
+.sidebar,
+.content {
+    overflow: hidden;
+}
+
+/* HOVER EFFECT SIDEBAR */
+
+.sidebar li:hover {
+    color: #fff;
+}
 
 /* BREAK POINT IN ALTEZZA PER SEZIONE ACCOUNT*/
 
@@ -143,13 +149,17 @@ body {
     }
 }
 
+@media screen and (max-height: 190px) {
+    .content .top-bar {
+        z-index: -1;
+    }
+}
+
 /* CONTENT */
 
 .main-content .content {
     display: flex;
     flex-basis: calc(100% - 250px);
-    padding-top: 99px;
-    padding-right: 20px;
 }
 
 .main-content .content h2,
@@ -164,7 +174,7 @@ body {
     text-align: right;
     padding-top: 25px;
     padding-bottom: 25px;
-    background: rgba(8,11,18, 1);
+    background: rgba(8,11,18, .3);
 }
 
 .content .top-bar .upgrade {
@@ -180,12 +190,12 @@ body {
 }
 
 .content .music-content {
-    flex-basis: 100%;
     flex-grow: 1;
     flex-wrap: wrap;
     padding-left: 30px;
     overflow-y: auto;
     color: #7d7f84;
+    padding-top: 99px;
 }
 
 .music-content .inline-list {
@@ -202,20 +212,15 @@ body {
     cursor: pointer;
 }
 
-.music-content .inline-list>li:hover {
-    color: #fff;
-}
-
-/*.music-content .inline-list>li:first-child::after {
+.music-content .green-border {
     content: '';
-    position: absolute;
+    border: 2px solid #adff2f;
     width: 40px;
-    border-bottom: 4px solid #adff2f;
-    top: 155px;
-    left: 740px;
+    position: relative;
+    left: 461px;
+    top: -28px;
+    border-radius: 10px;
 }
-                           DA RIVEDERE
-*/
 
 .music-content .recently {
     margin-top: 10px;
@@ -244,6 +249,7 @@ body {
     text-align: center;
 }
 .box img {
+    display: block;
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
@@ -267,6 +273,16 @@ body {
 
 .music-content .popular-artists img {
     border-radius: 50%;
+}
+
+/* HOVER EFFECT CONTENT */
+
+.content .top-bar .upgrade:hover {
+    transform: scale(1.1);
+}
+
+.music-content .inline-list>li:hover {
+    color: #fff;
 }
 
 /* FOOTER */
@@ -307,6 +323,7 @@ body {
 
 .main-footer .footer-left .current-music-text p {
     color: #7d7f84;
+    cursor: pointer;
 }
 
 .main-footer .footer-left .current-music .preferences {
@@ -391,4 +408,20 @@ body {
     border-radius: 10px;
     align-self: center;
     cursor: pointer;
+}
+
+/* HOVER EFFECT FOOTER */
+
+.main-footer .footer-left .current-music p:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.main-footer .footer-left .preferences i:hover,
+.main-footer .footer-right .utilities-icons i:hover {
+    color: #fff;
+}
+
+.main-footer .footer-center .player-icons i:nth-child(3):hover {
+    transform: scale(1.3);
 }
