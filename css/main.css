@@ -39,6 +39,7 @@ body {
 
 .sidebar .mini-logo {
     visibility: hidden;
+    width: 10%;
 }
 
 .sidebar .block-list {
@@ -504,7 +505,7 @@ body {
 }
 
 .main-footer .footer-right .volume-bar .actual-volume .circle {
-    left: 30px;
+    left: 15px;
     top: -8px;
 }
 
