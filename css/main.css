@@ -212,7 +212,11 @@ body {
     cursor: pointer;
 }
 
-.music-content .green-border {
+.music-content .inline-list>li:first-child {
+    border-bottom: 2px solid #adff2f;
+}
+
+/* .music-content .green-border {
     content: '';
     border: 2px solid #adff2f;
     width: 40px;
@@ -221,7 +225,7 @@ body {
     top: -28px;
     border-radius: 10px;
 }
-
+*/
 .music-content .recently {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -245,15 +249,50 @@ body {
 }
 
 .box {
+    position: relative;
     width: 200px;
     text-align: center;
+    cursor: pointer;
 }
+
 .box img {
     display: block;
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-    cursor: pointer;
+}
+
+.music .col .box .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    background-color: rgba(0,0,0, .2);
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.music .col .box .icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    font-size: 70px;
+}
+
+.music .col .box .icon .stranger {
+    top: 50%;
+}
+
+.music .col .box .icon.icon-round {
+    border-radius: 50%;
+}
+
+.music .col .box .icon .round {
+    top: 50%;
 }
 
 .music .box h3 {
@@ -285,6 +324,10 @@ body {
     color: #fff;
 }
 
+.music .col .box:hover .icon {
+    opacity: 1;
+}
+
 /* FOOTER */
 
 .main-footer {
@@ -311,7 +354,6 @@ body {
 }
 
 .main-footer .footer-left .current-music-text {
-    display: inline-block;
     align-self: center;
     margin-left: 20px;
     font-size: 14px;
@@ -327,7 +369,6 @@ body {
 }
 
 .main-footer .footer-left .current-music .preferences {
-    display: inline-block;
     margin-left: 60px;
     color: #7d7f84;
 }
@@ -374,6 +415,7 @@ body {
 }
 
 .main-footer .footer-center .player-progression {
+    position: relative;
     content: '';
     height: 2px;
     width: 420px;
@@ -381,6 +423,19 @@ body {
     border-radius: 10px;
     margin-right: 10px;
     margin-left: 10px;
+    cursor: pointer;
+}
+
+.main-footer .footer-center .player-progression .player-actual-progression {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    content: '';
+    height: 2px;
+    width: 25%;
+    border: 2px solid;
+    border-radius: 10px;
+    color: #fff;
     cursor: pointer;
 }
 
@@ -401,6 +456,7 @@ body {
 
 .main-footer .footer-right .volume-bar {
     display: flex;
+    position: relative;
     content: '';
     width: 150px;
     height: 2px;
@@ -408,6 +464,44 @@ body {
     border-radius: 10px;
     align-self: center;
     cursor: pointer;
+}
+
+
+.main-footer .footer-right .volume-bar .actual-volume {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 25%;
+    height: 2px;
+    border: 2px solid;
+    border-radius: 10px;
+    align-self: center;
+    cursor: pointer;
+    color: #fff;
+}
+
+.main-footer .footer-center .player-progression .player-actual-progression .circle,
+.main-footer .footer-right .volume-bar .actual-volume .circle {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 30px;
+    top: -2px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0;
+}
+
+.main-footer .footer-center .player-progression .player-actual-progression .circle {
+    left: 95px;
+    top: -7px;
+}
+
+.main-footer .footer-right .volume-bar .actual-volume .circle {
+    left: 30px;
+    top: -8px;
 }
 
 /* HOVER EFFECT FOOTER */
@@ -424,4 +518,14 @@ body {
 
 .main-footer .footer-center .player-icons i:nth-child(3):hover {
     transform: scale(1.3);
+}
+
+.main-footer .footer-center .player-progression:hover .player-actual-progression,
+.main-footer .footer-right .volume-bar:hover .actual-volume {
+    color: #adff2f;
+}
+
+.main-footer .footer-center .player-progression:hover .player-actual-progression .circle,
+.main-footer .footer-right .volume-bar:hover .actual-volume .circle {
+    opacity: 1;
 }
