@@ -34,6 +34,7 @@ body {
 
 .sidebar .logo {
     width: 60%;
+    padding-top: 20px;
     cursor: pointer;
 }
 
@@ -144,20 +145,6 @@ body {
 
 .sidebar li:hover {
     color: #fff;
-}
-
-/* BREAK POINT IN ALTEZZA PER SEZIONE ACCOUNT*/
-
-@media screen and (max-height: 600px) {
-    .sidebar .account {
-        visibility: hidden;
-    }
-}
-
-@media screen and (max-height: 190px) {
-    .content .top-bar {
-        z-index: -1;
-    }
 }
 
 /* CONTENT */
@@ -597,5 +584,30 @@ body {
 
     .main-footer .footer-right .volume-bar {
         width: 30%;
+    }
+}
+
+/* BREAK POINT IN ALTEZZA PER SEZIONE ACCOUNT*/
+
+@media screen and (max-height: 600px) {
+    .sidebar .account {
+        visibility: hidden;
+    }
+
+}
+
+/* BREAK POINT IN ALTEZZA PER BEFORE DI ACTIVE IN SIDEBAR */
+@media screen and (max-height: 220px) {
+    .sidebar .block-list .active::before {
+        display: none;
+    }
+
+}
+
+/* BREAK POINT IN ALTEZZA PER TOP BAR */
+
+@media screen and (max-height: 188px) {
+    .content .top-bar {
+        display: none;
     }
 }
